@@ -1,0 +1,22 @@
+<header>
+    <nav
+      class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3"
+    >
+      <div class="container">
+        <a class="navbar-brand" [routerLink]="['/']">Workout Tracker</a>
+        <div
+          class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+        >
+          <ul class="navbar-nav flex-grow">
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link text-dark" [routerLink]="['/view-workouts']">View Workouts</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link text-dark" [routerLink]="['/create-workout']">Create a Workout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  

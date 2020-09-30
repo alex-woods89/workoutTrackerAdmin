@@ -1,0 +1,46 @@
+
+<div align="center">
+<form>
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" placeholder="Workout Name" [(ngModel)]="workoutName" name="workoutName" required>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Excersize</th>
+            <th scope="col">Sets</th>
+            <th scope="col">Reps</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr scope="row" *ngFor="let x of excersizes">
+            <td>{{x.name}}</td>
+            <td>{{x.sets}}</td>
+            <td>{{x.reps}}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" placeholder="Excersize Name" [(ngModel)]="excersize.name" name="name" required>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" placeholder="Sets" [(ngModel)]="excersize.sets" name="sets" required>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" placeholder="Reps" [(ngModel)]="excersize.reps" name="reps" required>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <button (click)="addExcersize()" class="btn btn-primary mb-2">Add Excersize</button>
+
+    </div>
+</form>
+
+<button (click)="saveWorkout()" class="btn btn-primary mb-2">Save Workout</button>
+</div>

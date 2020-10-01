@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateWorkoutComponent implements OnInit {
   
-  workout = {name: "", excersizes: []}
-  excersizes = []
-  excersize = {name: "", sets:"", reps:""}
+  workout = {name: "", exersizes: []}
+  exersizes = []
+  exersize = {name: "", sets:"", reps:""}
   workoutName = ""
 
   constructor() { }
@@ -17,17 +17,17 @@ export class CreateWorkoutComponent implements OnInit {
   ngOnInit() {
   }
   
-  addExcersize(){
-    console.log("add excersize pressed")
+  addExersize(){
+    console.log("add exersize pressed")
     console.log(this.workoutName)
-    if(this.excersize.name !== "" || this.excersize.sets !== "" || this.excersize.reps !== "") {
-      this.excersizes.push(this.excersize)
+    if(this.exersize.name !== "" || this.exersize.sets !== "" || this.exersize.reps !== "") {
+      this.exersizes.push(this.exersize)
     }
-    this.excersize = {name: "", sets:"", reps:""}
+    this.exersize = {name: "", sets:"", reps:""}
   }
 
   saveWorkout(){
-    this.workout = {name: this.workoutName, excersizes: this.excersizes}
+    this.workout = {name: this.workoutName, exersizes: this.exersizes}
     console.log(this.workout)
   }
 }

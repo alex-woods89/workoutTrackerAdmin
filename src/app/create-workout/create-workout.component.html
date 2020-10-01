@@ -9,7 +9,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">Excersize</th>
+            <th scope="col">Exersize</th>
             <th scope="col">Sets</th>
             <th scope="col">Reps</th>
             <th scope="col"></th>
@@ -17,7 +17,7 @@
     </thead>
 
     <tbody>
-        <tr scope="row" *ngFor="let x of excersizes">
+        <tr scope="row" *ngFor="let x of exersizes">
             <td>{{x.name}}</td>
             <td>{{x.sets}}</td>
             <td>{{x.reps}}</td>
@@ -28,17 +28,16 @@
 
 <form class="form-inline">
     <div class="form-group mx-sm-3 mb-2">
-        <input type="text" class="form-control" placeholder="Excersize Name" [(ngModel)]="excersize.name" name="name" required>
+        <input type="text" class="form-control" placeholder="Exersize Name" [(ngModel)]="exersize.name" name="name" required>
     </div>
     <div class="form-group mx-sm-3 mb-2">
-        <input type="text" class="form-control" placeholder="Sets" [(ngModel)]="excersize.sets" name="sets" required>
+        <input type="text" class="form-control" placeholder="Sets" [(ngModel)]="exersize.sets" name="sets" required>
     </div>
     <div class="form-group mx-sm-3 mb-2">
-        <input type="text" class="form-control" placeholder="Reps" [(ngModel)]="excersize.reps" name="reps" required>
+        <input type="text" class="form-control" placeholder="Reps" [(ngModel)]="exersize.reps" name="reps" required>
     </div>
     <div class="form-group mx-sm-3 mb-2">
-        <button (click)="addExcersize()" class="btn btn-primary mb-2">Add Excersize</button>
-
+        <button (click)="addExersize()" class="btn btn-primary mb-2">Add Exersize</button>
     </div>
 </form>
 

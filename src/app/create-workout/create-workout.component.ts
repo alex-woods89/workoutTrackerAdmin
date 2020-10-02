@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkoutService } from '../services/workout-service.service'
 
 @Component({
   selector: 'app-create-workout',
@@ -12,14 +13,12 @@ export class CreateWorkoutComponent implements OnInit {
   exersize = {name: "", sets:"", reps:""}
   workoutName = ""
 
-  constructor() { }
+  constructor(private workoutService: WorkoutService) { }
 
   ngOnInit() {
   }
   
   addExersize(){
-    console.log("add exersize pressed")
-    console.log(this.workoutName)
     if(this.exersize.name !== "" || this.exersize.sets !== "" || this.exersize.reps !== "") {
       this.exersizes.push(this.exersize)
     }
@@ -28,6 +27,9 @@ export class CreateWorkoutComponent implements OnInit {
 
   saveWorkout(){
     this.workout = {name: this.workoutName, exersizes: this.exersizes}
-    console.log(this.workout)
+    this.workoutService.createWorkout(this.workout)
+    this.exersizes = []
+    this.workoutName = ""
+    window.alert("Workout saved succesfully")
   }
 }

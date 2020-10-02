@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-workouts.component.css']
 })
 export class ViewWorkoutsComponent implements OnInit {
+  
 
   constructor() { }
 

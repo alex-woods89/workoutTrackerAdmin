@@ -33,4 +33,12 @@ export class ViewWorkoutsComponent implements OnInit {
   deleteWorkout(){
     this.workoutService.deleteWorkout(this.selectedWorkout.id)
   }
+
+  edit(){
+    this.isEdit = true
+  }
+
+  updateWorkout(){
+    
+  }
 }

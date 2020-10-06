@@ -9,8 +9,10 @@ import { WorkoutService } from '../services/workout-service.service'
 export class ViewWorkoutsComponent implements OnInit {
   
   workouts
-  selectedWorkout
+  selectedWorkout = {name: "", id:"", exersizes: []}
+  selectedExcersize
   isEdit = false
+  newExersize = {}
 
   constructor(private workoutService: WorkoutService) { }
 
@@ -34,11 +36,15 @@ export class ViewWorkoutsComponent implements OnInit {
     this.workoutService.deleteWorkout(this.selectedWorkout.id)
   }
 
-  edit(){
+  edit(x){
     this.isEdit = true
+    this.selectedExcersize = x
   }
 
   updateWorkout(){
-    
+    let index = this.selectedWorkout.exersizes.indexOf(this.selectedExcersize)
+    this.selectedWorkout.exersizes.splice(index, 1, this.newExersize)
+    this.workoutService.updateWorkout(this.selectedWorkout)
+    this.isEdit = false
   }
 }
